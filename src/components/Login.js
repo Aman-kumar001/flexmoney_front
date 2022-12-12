@@ -27,11 +27,13 @@ const LogIn = ({ tel, setTel }) => {
 		if (18 <= age && age <= 65) {
 			console.log(payLoad);
 
-			axios.post('http://localhost:8000/api/user', payLoad).then((res) => {
-				console.log(res.message);
-				let path = `/yogaSlot`;
-				navigate(path);
-			});
+			axios
+				.post('https://goflex.adaptable.app/api/user', payLoad)
+				.then((res) => {
+					console.log(res.message);
+					let path = `/yogaSlot`;
+					navigate(path);
+				});
 		} else {
 			let path = `/error`;
 			navigate(path);
@@ -42,7 +44,7 @@ const LogIn = ({ tel, setTel }) => {
 		e.preventDefault();
 
 		axios
-			.get('http://localhost:8000/api/user/getUser', {
+			.get('https://goflex.adaptable.app/api/user/getUser', {
 				params: {
 					phone: `${tel}`,
 				},

@@ -12,7 +12,7 @@ const YogaSlot = ({ tel, setTel }) => {
 		// setTel('7412589630');
 		const current = new Date();
 		axios
-			.get('http://localhost:8000/api/user/getUser', {
+			.get('https://goflex.adaptable.app/api/user/getUser', {
 				params: {
 					phone: `${tel}`,
 				},
@@ -41,7 +41,7 @@ const YogaSlot = ({ tel, setTel }) => {
 		};
 
 		axios
-			.put(`http://localhost:8000/api/user/${data._id}`, payLoad)
+			.put(`https://goflex.adaptable.app/api/user/${data._id}`, payLoad)
 			.then((res) => {
 				console.log(res.data);
 				setFeesPaid(true);
